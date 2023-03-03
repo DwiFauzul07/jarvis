@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 });
 
 //route
-app.get("/",(_req, res) => {
+app.get("/api/fauzul",(_req, res) => {
     res.send("Fauzul");
 });
 
