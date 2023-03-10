@@ -1,4 +1,6 @@
 import express from "express";
+import {client} from "./db.js";
+
 
 const app = express();
 
@@ -11,6 +13,11 @@ app.use((req, res, next) => {
 //route
 app.get("/api/fauzul",(_req, res) => {
     res.send("Fauzul");
+});
+
+app.get("/api/mahasiswa", async (_req, res) => {
+    const results = await client.query("SELECT * FROM mahasiswa");
+    res.send(results.rows);
 });
 
 app.listen(3000, () => {
