@@ -3,11 +3,11 @@ import pkg from "pg";
  const {Client} = pkg;
 
 export const client = new Client({
-    host: "localhost",
+    host: "db.cvttueprclkwhojnahne.supabase.co",
     port: 5432,
-    database: "integer",
+    database: "postgres",
     user: "postgres",
-    password: "fauzul07"
+    password: "iwanhanafiah"
 })
 
 await client.connect();

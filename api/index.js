@@ -5,6 +5,8 @@ import {client} from "./db.js";
 const app = express();
 
 //middleware
+app.use(express.static("public"));
+
 app.use((req, res, next) => {
     console.log("ada request masuk");
     next();
@@ -20,6 +22,7 @@ app.get("/api/mahasiswa", async (_req, res) => {
     res.send(results.rows);
 });
 
+//
 app.listen(3000, () => {
     console.log("Berhasil Jalan");
 });
